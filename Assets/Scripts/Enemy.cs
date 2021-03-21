@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         if (transform.position.y < -3f)
         {
             controller.SpawnNewEnemy();
+            controller.ShortenBlobDelay();
             Destroy(gameObject);
         }
     }

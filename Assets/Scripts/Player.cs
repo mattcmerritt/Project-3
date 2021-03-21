@@ -7,19 +7,19 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
     private bool onGround;
-    private Vector3 startPosition;
 
     private void Start()
     {
         onGround = true;
-        startPosition = transform.position;
     }
 
     private void Update()
     {
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
+
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            rb.velocity += new Vector2(0f, 7f);
+            rb.velocity += new Vector2(0f, 6f);
         }
 
         if (transform.position.y < -6f)
